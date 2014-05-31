@@ -20,6 +20,11 @@ function Controller() {
             }
         }
     }
+    function changingColorAnimation(loaderImage) {
+        loaderImage.image = "/images/stick-sequence/" + loaderIndex + ".png";
+        loaderIndex++;
+        3 === loaderIndex && (loaderIndex = 1);
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -61,6 +66,8 @@ function Controller() {
     $.index.open();
     $.index.add(labelTitle);
     construirArbol();
+    var loaderIndex = 1;
+    setInterval(changingColorAnimation(map[1][0]), 80);
     _.extend($, exports);
 }
 
