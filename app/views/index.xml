@@ -1,5 +1,7 @@
 <Alloy>
 	<Window class="container">
-		
+		<Label id="title">The Last Stick</Label>
+		<Button id="buttonPlay" onClick="goPlay">Empezar a jugar</Button>
+		<Button id="buttonSearch" onClick="search">Buscar a un rival</Button>
 	</Window>
 </Alloy>

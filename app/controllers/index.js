@@ -1,24 +1,39 @@
-var maxPalosFila = 7;
+function goPlay(e) {
+	/*var modalWindow = Ti.UI.createWindow({
+		title: 'modal Window',
+		backgroundColor: '#000',
+		height: 200,
+		width: '200dp',
+		id: 'modal',
+		fullscreen: false
+	});
+	
+	var label = Ti.UI.createLabel({
+		text: 'Nombre de usuario:',
+		color: '#FFF',
+		top: 50
+	});
+	
+	var input = Ti.UI.createTextField({
+		value: '',
+		backgroundColor:'#fff',
+		width: 150,
+		top: 80
+	});
+	
+	modalWindow.add(label);
+	modalWindow.add(input);
+	modalWindow.open({modal:true});*/
+    Alloy.createController("game").getView().open();
+}
 
-var stickHeight = Titanium.Platform.displayCaps.platformHeight / maxPalosFila - 20;
-var stickWidht = Titanium.Platform.displayCaps.platformWidth / maxPalosFila - 20;
-var middlePos = Titanium.Platform.displayCaps.platformWidth / 2;
+function search(e) {
+	alert("Deseas buscar un rival??");
+}
 
-var blueStick = Ti.UI.createImageView({
-    image : '/images/blueStick.png'
-});
+$.index.open();
 
-var whiteStick = Ti.UI.createImageView({
-    image : '/images/whiteStick.png'
-});
-
-var Stick = Ti.UI.createImageView({
-    image : '/images/Stick.png',
-    width : Titanium.Platform.displayCaps.platformWidth / maxPalosFila,
-    height : Titanium.Platform.displayCaps.platformHeight / maxPalosFila,
-});
-
-var labelTitle = Ti.UI.createLabel({
+/*var labelTitle = Ti.UI.createLabel({
     font : {
         fontSize : 50
     },
@@ -27,40 +42,8 @@ var labelTitle = Ti.UI.createLabel({
     top : 100
 });
 
-var map = [];
-
-function construirArbol() {
-    var topPosition = 0;
-    var leftPosition = 0;
-    for (var i = 1; i <= maxPalosFila; i = i + 2) {
-        topPosition = i * (stickHeight/1.5);
-        leftPosition = Titanium.Platform.displayCaps.platformWidth/(i+1);
-        map[i] = [];
-        for (var j = 0; j < i; j++) {
-            Titanium.API.info("Pintando fila "+i+" palo "+j+" en posicion top: "+topPosition+" left: "+ leftPosition);
-            map[i][j] = Ti.UI.createImageView({
-                image : '/images/Stick.png',
-                width : stickWidht,
-                height : stickHeight,
-                top : topPosition,
-                left : leftPosition
-            });
-            $.index.add(map[i][j]);
-            leftPosition = leftPosition + stickWidht;
-        };
-    };
-}
-
-
-function doClick(e) {
-    Titanium.API.info("Ancho: " + Titanium.Platform.DisplayCaps.platformWidth);
-    Titanium.API.info("Alto: " + Titanium.Platform.DisplayCaps.platformHeight);
-}
-
-
-$.index.open();
 $.index.add(labelTitle);
-construirArbol(); 
+$.index.open();
 
 /*
 // Prueba animacion colores

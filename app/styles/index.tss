@@ -1,8 +1,28 @@
 ".container": {
-	backgroundColor:"white"
+	backgroundColor:"white",
+	layout: 'vertical'
 },
 "Label": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	color: "#000"
-} 
+},
+"#title": {
+	width: Ti.UI.SIZE,
+	heigth: Ti.UI.SIZE,
+	top: 150,
+	font : {
+		fontSize: 24,
+		fontWeight: 'bold'
+	},
+	color: "#000"
+},
+"#buttonPlay": {
+	width: Ti.UI.SIZE,
+	heigth: Ti.UI.SIZE,
+	top: 50
+},
+"#buttonSearch": {
+	width: Ti.UI.SIZE,
+	heigth: Ti.UI.SIZE
+}
